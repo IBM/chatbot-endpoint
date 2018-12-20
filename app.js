@@ -15,14 +15,6 @@ var port = process.env.PORT || 8080;
 
 var app = express();
 
-if( process.env ){
-  console.log(process.env)
-}
-
-// app.use(express.static(__dirname + '/public'));
-//
-// app.use(bodyParser());
-
 app.post('/location', function(req, res) {
 
   console.log('setting geographic location');
@@ -44,8 +36,6 @@ app.use(bodyParser.json());
 
 // Create the service wrapper
 
-console.log("got to here")
-
 var assistant = new assistantv2({
   version: config.version,
   iam_apikey: config.apikey,
@@ -59,28 +49,23 @@ assistant.createSession({
 }, function(err, response) {
   if (err) {
     console.error(err);
-  } else{
+  } else {
 
     sessionid = response.session_id;
-
-    console.log(JSON.stringify(response, null, 2));
+    console.log('established watson assistant session')
+    console.log('session id: ' + sessionid);
   }
 });
 
 var newContext = {
-  global : {
-    system : {
-      turn_count : 1
+  global: {
+    system: {
+      turn_count: 1
     }
   }
 };
 
-// Endpoint to be call from the client side
-app.post('/message', function (req, res) {
-
-  res.setHeader('Content-Type', 'application/json');
-
-  console.log("hit watson message endpoint")
+function getWatsonPayload(req) {
 
   var contextWithAcc = (req.body.context) ? req.body.context : newContext;
 
@@ -88,13 +73,11 @@ app.post('/message', function (req, res) {
     contextWithAcc.global.system.turn_count += 1;
   }
 
-  //console.log(JSON.stringify(contextWithAcc, null, 2));
-
   var textIn = '';
 
-  if(req.body.input) {
+  if (req.body.input) {
     textIn = req.body.input;
-  }else(
+  } else(
     console.log(req.body)
   )
 
@@ -103,20 +86,30 @@ app.post('/message', function (req, res) {
     session_id: sessionid,
     context: contextWithAcc,
     input: {
-      message_type : 'text',
-      text : textIn,
-      options : {
-        return_context : true
+      message_type: 'text',
+      text: textIn,
+      options: {
+        return_context: true
       }
     }
   };
 
-  console.log("sending message to Watson with this payload:")
+  return payload;
+}
 
-  console.log(payload)
+// Endpoint to be call from the client side
+app.post('/message', function(req, res) {
+
+  res.setHeader('Content-Type', 'application/json');
+  console.log("hit watson message endpoint");
+
+  var payload = getWatsonPayload(req);
+
+  console.log("sending message to watson assistant")
+  // console.log(payload)
 
   // Send the input to the assistant service
-  assistant.message(payload, function (err, data) {
+  assistant.message(payload, function(err, data) {
 
     var assistantId = config.id;
 
@@ -127,52 +120,95 @@ app.post('/message', function (req, res) {
       return res.status(err.code || 500).json(err);
     }
 
-    console.log("Watson Response")
+    console.log("received response from watson assistant")
 
-    console.log(data)
+    // console.log(data)
 
     var keyword = '';
 
-    if(data.output.entities != undefined){
+    if (data.output.entities != undefined) {
 
-      keyword = decideOnKeywords(data.output.entities);
+      var promise = new Promise(function(resolve, reject) {
 
+        keyword = decideOnKeywords(data.output.entities);
+
+        if (keyword != undefined) {
+          console.log("watson assistant suggesed keywords");
+          var elasticpromise = new Promise(function(elasticresolve, elasticreject) {
+            var elasticdata = elasticresolve(callElasticSearch(keyword));
+            if (elasticdata != undefined) {
+              console.log("found elastic search content");
+              console.log('keyword ' + keyword.value);
+              return res.json(data);
+            } else {
+              elasticreject("failed to find elastic search content")
+            }
+          })
+        } else {
+          console.log("failed to find entities")
+          reject(Error("It broke"));
+        }
+      });
     }
-
-    console.log('keyword ' + keyword.value);
-
-    return res.json(data);
   });
 });
 
 
-function decideOnKeywords(entities){
+function decideOnKeywords(entities) {
 
-    console.log("entites matched")
+  console.log("entities found")
+  // console.log(entities)
 
-    console.log(entities)
+  var sortedentities = entities.sort(compare);
 
-    var sortedentities = entities.sort(compare);
+  console.log("sorted entities in order of confidence")
+  // console.log(sortedentities)
 
-    console.log("sorted in order of confidence")
+  var reverseorder = sortedentities.reverse()
 
-    console.log(sortedentities)
+  if (reverseorder.length > 0) {
+    var strongestcandidate = reverseorder[0];
+  }
 
-    var reverseorder = sortedentities.reverse()
+  console.log("proposing strongest candidate: " + strongestcandidate.value)
 
-    if(reverseorder.length > 0){
-        var strongestcandidate = reverseorder[0];
-    }
+  return strongestcandidate;
+}
 
-    console.log("strongest candidate")
+function getElasticSearchOptions(keyword) {
 
-    console.log(strongestcandidate)
+  var path = 'http://169.55.81.195:31726/codey/v1/codepattern?search=' + keyword;
+  // clinics = clinics + '?id_remedio=' + req.body.drug.id;
 
-    return strongestcandidate;
+  var options = {
+    url: path,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'User-Agent': 'Mozilla'
+    },
+    json: null
+  };
+
+  return options;
+}
+
+function callElasticSearch(keyword) {
+
+  console.log("calling elastic search")
+
+  var elasticSearchResults;
+
+  sender(getElasticSearchOptions(keyword), function(err, newresponse, clinics) {
+    elasticSearchResults = newresponse.body;
+    console.log(newresponse.body);
+  })
+
+  return elasticSearchResults;
 }
 
 
-function compare(a,b) {
+function compare(a, b) {
 
   return parseFloat(a.confidence) - parseFloat(b.confidence)
   // if (a.confidence < b.confidence)

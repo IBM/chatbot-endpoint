@@ -1,0 +1,29 @@
+{
+  "name": "devon",
+  "version": "1.0.0",
+  "description": "advocacy chatbot endpoint",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IBM/chatbot-endpoint.git"
+  },
+  "author": "Anton McConville",
+  "license": "EPL-1.0",
+  "bugs": {
+    "url": "https://github.com/IBM/chatbot-endpoint/issues"
+  },
+  "homepage": "https://github.com/IBM/chatbot-endpoint#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cfenv": "^1.1.0",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "watson-developer-cloud": "^3.15.0"
+  },
+  "engines": {
+    "node": "6.x"
+  }
+}

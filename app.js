@@ -100,7 +100,7 @@ function getWatsonPayload(req) {
 // Endpoint to be call from the client side
 app.post('/message', function(req, res) {
 
-  res.setHeader('Content-Type', 'application/json');
+  // res.setHeader('Content-Type', 'application/json');
   console.log("hit watson message endpoint");
 
   var payload = getWatsonPayload(req);
@@ -128,30 +128,48 @@ app.post('/message', function(req, res) {
 
     if (data.output.entities != undefined) {
 
-      var promise = new Promise(function(resolve, reject) {
-
+      var p = new Promise(function(resolve, reject) {
         keyword = decideOnKeywords(data.output.entities);
-
+        console.log('keyword ' + keyword.value);
         if (keyword != undefined) {
           console.log("watson assistant suggesed keywords");
-          var elasticpromise = new Promise(function(elasticresolve, elasticreject) {
-            var elasticdata = elasticresolve(callElasticSearch(keyword));
-            if (elasticdata != undefined) {
-              console.log("found elastic search content");
-              console.log('keyword ' + keyword.value);
-              return res.json(data);
-            } else {
-              elasticreject("failed to find elastic search content")
-            }
-          })
+          resolve(keyword)
+
         } else {
           console.log("failed to find entities")
           reject(Error("It broke"));
         }
-      });
+      }).then(function(keyword){return callElasticSearch(keyword)}).then(
+
+        function(result){
+          console.log('chained promise');
+          console.log(result);
+
+          var chatbotresponse = buildBotResponse(result)
+
+          res.send(JSON.stringify(chatbotresponse, null, 3));
+
+          // return res.json(result);
+        });
     }
   });
 });
+
+function buildBotResponse(content) {
+
+    content = JSON.parse(content)
+
+    var response = {response:'Here are some related resources ...', resources:[]};
+
+    content.hits.hits.forEach(function(hit){
+      var item ={type:'pattern',url:hit._source.codeRepoUrl,title:hit._source.id};
+      response.resources.push(item);
+    })
+
+    console.log(response);
+
+    return response;
+}
 
 
 function decideOnKeywords(entities) {
@@ -196,26 +214,32 @@ function getElasticSearchOptions(keyword) {
 function callElasticSearch(keyword) {
 
   console.log("calling elastic search")
+  console.log(keyword)
 
   var elasticSearchResults;
 
-  sender(getElasticSearchOptions(keyword), function(err, newresponse, clinics) {
-    elasticSearchResults = newresponse.body;
-    console.log(newresponse.body);
+  var outcome = new Promise(function(resolve, reject) {
+
+    sender(getElasticSearchOptions(keyword.value), function(err, newresponse, clinics) {
+      elasticSearchResults = newresponse.body;
+      console.log('received elastic search results')
+//      console.log(newresponse.body);
+
+      if (elasticSearchResults != undefined) {
+        console.log('resolving')
+        resolve(elasticSearchResults);
+      } else {
+        reject("")
+      }
+      // console.log(newresponse.body);
+    })
   })
 
-  return elasticSearchResults;
+  return outcome;
 }
 
-
 function compare(a, b) {
-
   return parseFloat(a.confidence) - parseFloat(b.confidence)
-  // if (a.confidence < b.confidence)
-  //    return -1;
-  // if (a.confidence > b.confidence)
-  //   return 1;
-  // return 0;
 }
 
 app.get('/content', function(req, res) {
@@ -243,7 +267,7 @@ app.get('/content', function(req, res) {
   sender(options, function(err, newresponse, clinics) {
 
     elasticSearchResults = newresponse.body;
-    console.log(newresponse.body);
+    // console.log(newresponse.body);
   })
 
 

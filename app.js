@@ -3,11 +3,56 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var sender = require('request');
-// var watson = require('watson-developer-cloud');
+
+var wc = require('wrike-client');
+
+var axios = require('axios');
+
+console.log(wc)
+
+  /* https://www.wrike.com/api/v4/folders/IEAA3JYPI4EY2YDH/tasks */
+
+  /* For each city in the cities folder, get the event tasks
+     - then for each task check status for current
+
+     I think we want an endpoint to return the names of the cities
+
+     and then an endpoint for events in each city - a good
+     opportunity to use the city icons */
 
 var assistantv2 = require('watson-developer-cloud/assistant/v2'); // watson sdk
 
-var config = require('./config.json');
+var configurationdata = require('./config.json');
+
+var config;
+var token;
+
+configurationdata.forEach(function(data){
+  if(data.service === "assistant"){
+      config = data.credentials;
+  }
+
+  if(data.service === "wrike"){
+      token = data.credentials.token;
+  }
+})
+
+axios.get(
+    "https://www.wrike.com/api/v4/folders",
+    {headers: {
+        "Authorization" : "Bearer " + token
+      }
+    }
+  )
+  .then((response) => {
+      var response = response.data;
+
+      console.log(response)
+    },
+    (error) => {
+      var status = error.response.status
+    }
+  );
 
 var log4js = require('log4js');
 var logger = log4js.getLogger();

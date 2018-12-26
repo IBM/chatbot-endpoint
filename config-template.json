@@ -1,4 +1,4 @@
-{
+[{"service":"assistant", "credentials":{
   "id": "",
   "apikey": "",
   "iam_apikey_description": "",
@@ -7,4 +7,4 @@
   "iam_serviceid_crn": "",
   "url": "https://gateway.watsonplatform.net/assistant/api",
   "version": "2018-11-08"
-}
+},{"service":"wrike", "credentials":{"token":""}}]

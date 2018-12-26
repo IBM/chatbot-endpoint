@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: devon
-  host: devon 
+  name: advocacy
+  host: advocacy 
   disk_quota: 1024M

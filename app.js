@@ -182,7 +182,7 @@ app.post('/message', function(req, res) {
         keyword = decideOnKeywords(data.output.entities);
         logger.debug('keyword ' + keyword.value);
         if (keyword != undefined) {
-          logger.debug("watson assistant suggesed keywords");
+          logger.debug("watson assistant suggested keywords");
           resolve(keyword)
 
         } else {

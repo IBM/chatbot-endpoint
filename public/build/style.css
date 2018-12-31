@@ -1,0 +1,75 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: #25ceb6; */
+}
+
+iframe {
+  width: 100%;
+}
+
+.botui-app-container {
+  margin-top: 20px;
+}
+
+.botui-container {
+  /* background-color: #25ceb6; */
+}
+.botui-message-content {
+  color: #000000;
+    font-weight: bolder;
+    background-color: #DBFBFB;
+    border-radius: 4px;
+}
+
+.botui-message-content.human {
+  background-color: #E9F6ED;
+  color: #000000;
+    font-weight: bolder;
+    border-color: #9DEEB2;
+    float:right;
+}
+
+.patternlink {
+  background-color: #FFF0F1;
+  color: #000000;
+    font-weight: bolder;
+    border-color: #9DEEB2;
+    border: 1px solid;
+}
+
+.botui-actions-text-input {
+  color: #36887d;
+border-bottom: 1px solid #b6fff5;
+width: 100%;
+font-size: 14px;
+
+}
+
+.botui-actions-buttons-button {
+  line-height: 1 !important;
+  background-color: #28635a;
+}
+
+.botui-message-content-link {
+  color: #12796b;
+}
+
+
+.botui-container {
+    width: 500px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.botui-actions-text-submit{
+  display: none;
+}
+
+.botui-messages-container{
+      /* border: 1px solid #56D3D0; */
+}

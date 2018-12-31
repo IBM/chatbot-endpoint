@@ -3,12 +3,10 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var sender = require('request');
-
-var wc = require('wrike-client');
-
 var axios = require('axios');
-
-console.log(wc)
+var moment = require('moment');
+var momentRange = require('moment-range');
+momentRange.extendMoment(moment);
 
   /* https://www.wrike.com/api/v4/folders/IEAA3JYPI4EY2YDH/tasks */
 
@@ -37,22 +35,13 @@ configurationdata.forEach(function(data){
   }
 })
 
-axios.get(
-    "https://www.wrike.com/api/v4/folders",
-    {headers: {
-        "Authorization" : "Bearer " + token
-      }
-    }
-  )
-  .then((response) => {
-      var response = response.data;
+function dateMaker(datestring){
+  datestring = datestring.split('T');
+  datestring = datestring[0].split('-');
+  var newDate = new Date( datestring[0], datestring[1], datestring[2] );
+  return newDate;
+}
 
-      console.log(response)
-    },
-    (error) => {
-      var status = error.response.status
-    }
-  );
 
 var log4js = require('log4js');
 var logger = log4js.getLogger();
@@ -127,13 +116,18 @@ function getWatsonPayload(req) {
 
   if (req.body.input) {
     textIn = req.body.input;
+
+    console.log( 'input text:' + textIn )
+
   } else(
     console.log(req.body)
   )
 
+  var mysession = req.body.session;
+
   var payload = {
     assistant_id: config.id,
-    session_id: sessionid,
+    session_id: mysession,
     context: contextWithAcc,
     input: {
       message_type: 'text',
@@ -146,6 +140,25 @@ function getWatsonPayload(req) {
 
   return payload;
 }
+
+app.get('/session', function(req, res ){
+
+  assistant.createSession({
+    assistant_id: config.id,
+  }, function(err, response) {
+    if (err) {
+      console.error(err);
+    } else {
+      logger.debug('established watson assistant session')
+      logger.debug('session id: ' + response.session_id);
+      res.send(JSON.stringify({
+      session:response.session_id
+      }, null, 3));
+    }
+
+  });
+})
+
 
 // Endpoint to be call from the client side
 app.post('/message', function(req, res) {
@@ -164,15 +177,11 @@ app.post('/message', function(req, res) {
     var assistantId = config.id;
 
     if (err) {
-
       console.log(err)
-
       return res.status(err.code || 500).json(err);
     }
 
     logger.debug("received response from watson assistant")
-
-    // console.log(data)
 
     var keyword = '';
 
@@ -290,41 +299,75 @@ function compare(a, b) {
   return parseFloat(a.confidence) - parseFloat(b.confidence)
 }
 
-app.get('/content', function(req, res) {
+app.get('/events', function(req, res) {
 
-  res.setHeader('Content-Type', 'application/json');
+  var month;
+  var year;
 
-  /* First, send a message to Watson Assistant, to derive
-     entities */
+  var activeEvents = [];
 
-  var path = 'http://169.55.81.195:31726/codey/v1/codepattern?search=istio';
-  // clinics = clinics + '?id_remedio=' + req.body.drug.id;
+  if (req.body.month) {
+    month = req.body.month;
+    year = req.body.year;
+  } else(
+    console.log(req.body)
+  )
 
-  var options = {
-    url: path,
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla'
-    },
-    json: null
-  };
+  axios.get(
+      // "https://www.wrike.com/api/v4/folders",
+      "https://www.wrike.com/api/v4/folders/IEAA3JYPI4EIRYEV/tasks",
+      {headers: {
+          "Authorization" : "Bearer " + token
+        }
+      }
+    )
+    .then((response) => {
+        var response = response.data;
 
-  var elasticSearchResults;
-
-  sender(options, function(err, newresponse, clinics) {
-
-    elasticSearchResults = newresponse.body;
-    // console.log(newresponse.body);
-  })
+        const start = new Date(2019, 1, 1);
+        const end   = new Date(2019, 1, 31);
+        const range = moment.range(start, end);
 
 
-  /* Secondly, send those entities on to Elastic Search, to
-     ask for code patterns */
+        // testDate = Date.parse('2019-01-17T09:00:00')
 
-  res.send(JSON.stringify({
-    outcome: elasticSearchResults
-  }, null, 3));
+        // if( range.contains(testDate)){
+        //   console.log('TEST PASSED')
+        // }else{
+        //   console.log('TEST FAILED')
+        // }
+
+        response.data.forEach( function(event){
+
+          if(event.status === 'Active'){
+            console.log(event.dates.start)
+
+              if(event.dates.start != undefined){
+
+                var testDate = dateMaker( event.dates.start );
+
+                if(range.contains(testDate)){
+                  activeEvents.push(event)
+                }
+
+              }
+          }
+
+        })
+
+
+        res.send(JSON.stringify({
+          outcome: activeEvents
+        }, null, 3));
+
+        // console.log(response)
+      },
+      (error) => {
+        var status = error.response.status
+      }
+    );
+
+
 
 });
 

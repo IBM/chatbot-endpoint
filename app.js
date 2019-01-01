@@ -343,6 +343,80 @@ var locations = [{
   }
 ]
 
+var months = [{
+    "name": "January",
+    "start": 1,
+    "end": 31,
+    "id":1
+  },
+  {
+    "name": "February",
+    "start": 1,
+    "end": 28,
+    "id":2
+  },
+  {
+    "name": "March",
+    "start": 1,
+    "end": 31,
+    "id":3
+  },
+  {
+    "name": "April",
+    "start": 1,
+    "end": 30,
+    "id":4
+  },
+  {
+    "name": "May",
+    "start": 1,
+    "end": 31,
+    "id":5
+  },
+  {
+    "name": "June",
+    "start": 1,
+    "end": 30,
+    "id":6
+  },
+  {
+    "name": "July",
+    "start": 1,
+    "end": 31,
+    "id":7
+  },
+  {
+    "name": "August",
+    "start": 1,
+    "end": 31,
+    "id":8
+  },
+  {
+    "name": "September",
+    "start": 1,
+    "end": 30,
+    "id":9
+  },
+  {
+    "name": "October",
+    "start": 1,
+    "end": 31,
+    "id":10
+  },
+  {
+    "name": "November",
+    "start": 1,
+    "end": 30,
+    "id":11
+  },
+  {
+    "name": "December",
+    "start": 1,
+    "end": 31,
+    "id":12
+  }
+]
+
 app.get('/events', function(req, res) {
 
   logger.debug("Received request for event data");
@@ -367,10 +441,19 @@ app.get('/events', function(req, res) {
 
   var folder;
 
+  var monthrange;
+
   locations.forEach(function(city) {
     if (location === city.name) {
       folder = city.eventfolder;
       logger.debug("Matched a city from the request: " + location);
+    }
+  })
+
+  months.forEach(function(mth){
+    if(mth.name === month){
+      monthrange = mth;
+      logger.debug("Establising month range");
     }
   })
 
@@ -385,14 +468,14 @@ app.get('/events', function(req, res) {
     )
     .then((response) => {
 
-      logger.debug("Received data from Wrike");
+        logger.debug("Received data from Wrike");
 
         var response = response.data;
 
         console.log(response)
 
-        const start = new Date(2019, 1, 1);
-        const end = new Date(2019, 1, 31);
+        const start = new Date(2019, monthrange.id, monthrange.start);
+        const end = new Date(2019, monthrange.id, monthrange.end);
         const range = moment.range(start, end);
 
         logger.debug("Filtering events for " + month);

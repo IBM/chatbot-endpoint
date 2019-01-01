@@ -417,7 +417,7 @@ var months = [{
   }
 ]
 
-app.get('/events', function(req, res) {
+app.post('/events', function(req, res) {
 
   logger.debug("Received request for event data");
 
@@ -525,9 +525,7 @@ app.get('/events', function(req, res) {
 
         logger.debug("Replying with data for " + activeEvents.length + " events");
 
-        res.send(JSON.stringify({
-          outcome: monthContent
-        }, null, 3));
+        res.send(JSON.stringify(monthContent, null, 3));
 
         // console.log(response)
       },

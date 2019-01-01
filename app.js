@@ -427,6 +427,7 @@ app.get('/events', function(req, res) {
 
   var activeEvents = [];
 
+
   if (req.body.month) {
     month = req.body.month;
     year = req.body.year;
@@ -442,6 +443,8 @@ app.get('/events', function(req, res) {
   var folder;
 
   var monthrange;
+
+  var monthContent = { 'month': month, 'year':year, days:[]}
 
   locations.forEach(function(city) {
     if (location === city.name) {
@@ -472,13 +475,13 @@ app.get('/events', function(req, res) {
 
         var response = response.data;
 
-        console.log(response)
+        // console.log(response)
 
         const start = new Date(2019, monthrange.id, monthrange.start);
         const end = new Date(2019, monthrange.id, monthrange.end);
         const range = moment.range(start, end);
 
-        logger.debug("Filtering events for " + month);
+        logger.debug("Building event list for " + month);
 
         response.data.forEach(function(event) {
 
@@ -489,7 +492,32 @@ app.get('/events', function(req, res) {
               var testDate = dateMaker(event.dates.start);
 
               if (range.contains(testDate)) {
-                activeEvents.push(event)
+
+                activeEvents.push(event);
+
+                var newEvent = {
+                  "url":"",
+                  "title":event.title,
+                  "image":"",
+                  "description":"",
+                  "location":"",
+                  "time":""
+                }
+
+                var filedEvent = false;
+                var eventDay = testDate.getDate()
+                monthContent.days.forEach( function(dayContent){
+                    if( dayContent.day == eventDay ){
+                      dayContent.events.push(newEvent)
+                      filedEvent = true;
+                    }
+                })
+
+                if( filedEvent == false ){
+                    var dayContent = { 'day':eventDay, 'events':[]};
+                    dayContent.events.push(newEvent);
+                    monthContent.days.push(dayContent);
+                }
               }
             }
           }
@@ -498,7 +526,7 @@ app.get('/events', function(req, res) {
         logger.debug("Replying with data for " + activeEvents.length + " events");
 
         res.send(JSON.stringify({
-          outcome: activeEvents
+          outcome: monthContent
         }, null, 3));
 
         // console.log(response)

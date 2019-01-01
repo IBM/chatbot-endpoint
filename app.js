@@ -8,15 +8,15 @@ var moment = require('moment');
 var momentRange = require('moment-range');
 momentRange.extendMoment(moment);
 
-  /* https://www.wrike.com/api/v4/folders/IEAA3JYPI4EY2YDH/tasks */
+/* https://www.wrike.com/api/v4/folders/IEAA3JYPI4EY2YDH/tasks */
 
-  /* For each city in the cities folder, get the event tasks
-     - then for each task check status for current
+/* For each city in the cities folder, get the event tasks
+   - then for each task check status for current
 
-     I think we want an endpoint to return the names of the cities
+   I think we want an endpoint to return the names of the cities
 
-     and then an endpoint for events in each city - a good
-     opportunity to use the city icons */
+   and then an endpoint for events in each city - a good
+   opportunity to use the city icons */
 
 var assistantv2 = require('watson-developer-cloud/assistant/v2'); // watson sdk
 
@@ -25,20 +25,20 @@ var configurationdata = require('./config.json');
 var config;
 var token;
 
-configurationdata.forEach(function(data){
-  if(data.service === "assistant"){
-      config = data.credentials;
+configurationdata.forEach(function(data) {
+  if (data.service === "assistant") {
+    config = data.credentials;
   }
 
-  if(data.service === "wrike"){
-      token = data.credentials.token;
+  if (data.service === "wrike") {
+    token = data.credentials.token;
   }
 })
 
-function dateMaker(datestring){
+function dateMaker(datestring) {
   datestring = datestring.split('T');
   datestring = datestring[0].split('-');
-  var newDate = new Date( datestring[0], datestring[1], datestring[2] );
+  var newDate = new Date(datestring[0], datestring[1], datestring[2]);
   return newDate;
 }
 
@@ -83,19 +83,6 @@ var assistant = new assistantv2({
 
 var sessionid;
 
-assistant.createSession({
-  assistant_id: config.id,
-}, function(err, response) {
-  if (err) {
-    console.error(err);
-  } else {
-
-    sessionid = response.session_id;
-    logger.debug('established watson assistant session')
-    logger.debug('session id: ' + sessionid);
-  }
-});
-
 var newContext = {
   global: {
     system: {
@@ -117,7 +104,7 @@ function getWatsonPayload(req) {
   if (req.body.input) {
     textIn = req.body.input;
 
-    console.log( 'input text:' + textIn )
+    console.log('input text:' + textIn)
 
   } else(
     console.log(req.body)
@@ -138,10 +125,14 @@ function getWatsonPayload(req) {
     }
   };
 
+  console.log(payload)
+
   return payload;
 }
 
-app.get('/session', function(req, res ){
+app.get('/session', function(req, res) {
+
+  console.log('calling session endpoint');
 
   assistant.createSession({
     assistant_id: config.id,
@@ -152,7 +143,7 @@ app.get('/session', function(req, res ){
       logger.debug('established watson assistant session')
       logger.debug('session id: ' + response.session_id);
       res.send(JSON.stringify({
-      session:response.session_id
+        session: response.session_id
       }, null, 3));
     }
 
@@ -185,7 +176,9 @@ app.post('/message', function(req, res) {
 
     var keyword = '';
 
-    if (data.output.entities != undefined) {
+    if (data.output.entities != undefined && data.output.entities.length > 0) {
+
+      logger.debug(data);
 
       var p = new Promise(function(resolve, reject) {
         keyword = decideOnKeywords(data.output.entities);
@@ -198,9 +191,11 @@ app.post('/message', function(req, res) {
           logger.debug("failed to find entities")
           reject(Error("It broke"));
         }
-      }).then(function(keyword){return callElasticSearch(keyword)}).then(
+      }).then(function(keyword) {
+        return callElasticSearch(keyword)
+      }).then(
 
-        function(result){
+        function(result) {
           logger.debug('chained promise');
           logger.debug(result);
 
@@ -210,31 +205,44 @@ app.post('/message', function(req, res) {
 
           // return res.json(result);
         });
+    } else {
+      var response = {
+        response: 'I got nothing ...',
+        resources: []
+      };
+      res.send(JSON.stringify(response, null, 3));
     }
   });
 });
 
 function buildBotResponse(content) {
 
-    content = JSON.parse(content)
+  content = JSON.parse(content)
 
-    var response = {response:'This is what I was able to find ...', resources:[]};
+  var response = {
+    response: 'This is what I was able to find ...',
+    resources: []
+  };
 
-    content.hits.hits.forEach(function(hit){
-      var item ={type:'pattern',url:hit._source.codeRepoUrl,title:hit._source.id};
-      response.resources.push(item);
-    })
+  content.hits.hits.forEach(function(hit) {
+    var item = {
+      type: 'pattern',
+      url: hit._source.codeRepoUrl,
+      title: hit._source.id
+    };
+    response.resources.push(item);
+  })
 
-    logger.debug(response);
+  logger.debug(response);
 
-    return response;
+  return response;
 }
 
 
 function decideOnKeywords(entities) {
 
   logger.debug("watson assistant matched some entities")
-  // console.log(entities)
+  console.log(entities)
 
   var sortedentities = entities.sort(compare);
 
@@ -247,7 +255,11 @@ function decideOnKeywords(entities) {
     var strongestcandidate = reverseorder[0];
   }
 
-  logger.debug("proposing strongest candidate: " + strongestcandidate.value)
+
+
+  if (strongestcandidate.value != undefined) {
+    logger.debug("proposing strongest candidate: " + strongestcandidate.value)
+  }
 
   return strongestcandidate;
 }
@@ -280,7 +292,7 @@ function callElasticSearch(keyword) {
     sender(getElasticSearchOptions(keyword.value), function(err, newresponse, clinics) {
       elasticSearchResults = newresponse.body;
       logger.debug('received elastic search results')
-//      console.log(newresponse.body);
+      //      console.log(newresponse.body);
 
       if (elasticSearchResults != undefined) {
         logger.debug('resolving elastic search promise')
@@ -299,62 +311,108 @@ function compare(a, b) {
   return parseFloat(a.confidence) - parseFloat(b.confidence)
 }
 
+var locations = [{
+    "name": "London",
+    "eventfolder": "IEAA3JYPI4EIRYFG",
+    "contactfolder": ""
+  },
+  {
+    "name": "Amsterdam",
+    "eventfolder": "IEAA3JYPI4EIRYFY",
+    "contactfolder": ""
+  },
+  {
+    "name": "Bangalore",
+    "eventfolder": "IEAA3JYPI4EIRYGT",
+    "contactfolder": ""
+  },
+  {
+    "name": "Berlin",
+    "eventfolder": "IEAA3JYPI4EIRYFT",
+    "contactfolder": ""
+  },
+  {
+    "name": "Beijing",
+    "eventfolder": "IEAA3JYPI4EIRYGH",
+    "contactfolder": ""
+  },
+  {
+    "name": "New York",
+    "eventfolder": "IEAA3JYPI4EIRYEV",
+    "contactfolder": ""
+  }
+]
+
 app.get('/events', function(req, res) {
+
+  logger.debug("Received request for event data");
 
   var month;
   var year;
+  var location;
 
   var activeEvents = [];
 
   if (req.body.month) {
     month = req.body.month;
     year = req.body.year;
+    location = req.body.location;
+
+    logger.debug("Month: " + month);
+    logger.debug("Year: " + year);
+    logger.debug("Location: " + location);
   } else(
     console.log(req.body)
   )
 
+  var folder;
+
+  locations.forEach(function(city) {
+    if (location === city.name) {
+      folder = city.eventfolder;
+      logger.debug("Matched a city from the request: " + location);
+    }
+  })
+
+  logger.debug("Sending request to Wrike for folder data");
   axios.get(
       // "https://www.wrike.com/api/v4/folders",
-      "https://www.wrike.com/api/v4/folders/IEAA3JYPI4EIRYEV/tasks",
-      {headers: {
-          "Authorization" : "Bearer " + token
+      "https://www.wrike.com/api/v4/folders/" + folder + "/tasks", {
+        headers: {
+          "Authorization": "Bearer " + token
         }
       }
     )
     .then((response) => {
+
+      logger.debug("Received data from Wrike");
+
         var response = response.data;
 
+        console.log(response)
+
         const start = new Date(2019, 1, 1);
-        const end   = new Date(2019, 1, 31);
+        const end = new Date(2019, 1, 31);
         const range = moment.range(start, end);
 
+        logger.debug("Filtering events for " + month);
 
-        // testDate = Date.parse('2019-01-17T09:00:00')
+        response.data.forEach(function(event) {
 
-        // if( range.contains(testDate)){
-        //   console.log('TEST PASSED')
-        // }else{
-        //   console.log('TEST FAILED')
-        // }
+          if (event.status === 'Active') {
 
-        response.data.forEach( function(event){
+            if (event.dates.start != undefined) {
 
-          if(event.status === 'Active'){
-            console.log(event.dates.start)
+              var testDate = dateMaker(event.dates.start);
 
-              if(event.dates.start != undefined){
-
-                var testDate = dateMaker( event.dates.start );
-
-                if(range.contains(testDate)){
-                  activeEvents.push(event)
-                }
-
+              if (range.contains(testDate)) {
+                activeEvents.push(event)
               }
+            }
           }
-
         })
 
+        logger.debug("Replying with data for " + activeEvents.length + " events");
 
         res.send(JSON.stringify({
           outcome: activeEvents
@@ -366,9 +424,6 @@ app.get('/events', function(req, res) {
         var status = error.response.status
       }
     );
-
-
-
 });
 
 app.listen(port);

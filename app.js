@@ -42,6 +42,12 @@ function dateMaker(datestring) {
   return newDate;
 }
 
+if(!String.prototype.trim) {
+  String.prototype.trim = function () {
+    return this.replace(/^\s+|\s+$/g,'');
+  };
+}
+
 
 var log4js = require('log4js');
 var logger = log4js.getLogger();
@@ -346,7 +352,12 @@ var locations = [{
     "name": "New York",
     "eventfolder": "IEAA3JYPI4EIRYEV",
     "contactfolder": ""
+  },{
+    "name": "San Francisco",
+    "eventfolder": "IEAA3JYPI4EIRYE5",
+    "contactfolder": ""
   }
+
 ]
 
 var months = [{
@@ -423,7 +434,13 @@ var months = [{
   }
 ]
 
+function dateOrder(a, b) {
+  return parseFloat(a.day) - parseFloat(b.day)
+}
+
 app.post('/events', function(req, res) {
+
+  logger.debug("---------------------------------");
 
   logger.debug("Received request for event data");
 
@@ -501,12 +518,17 @@ app.post('/events', function(req, res) {
 
                 activeEvents.push(event);
 
+                var components = event.title.split('-')
+
+                var title = components[0].trim()
+                var place = components[1].trim()
+
                 var newEvent = {
                   "url":"",
-                  "title":event.title,
+                  "title":title,
                   "image":"",
                   "description":"",
-                  "location":"",
+                  "location":place,
                   "time":""
                 }
 
@@ -528,6 +550,10 @@ app.post('/events', function(req, res) {
             }
           }
         })
+
+        var ordered = monthContent.days.sort(dateOrder);
+
+        console.log(ordered)
 
         logger.debug("Replying with data for " + activeEvents.length + " events");
 

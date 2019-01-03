@@ -73,3 +73,10 @@ font-size: 14px;
 .botui-messages-container{
       /* border: 1px solid #56D3D0; */
 }
+
+
+.botui-app-container {
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom:50px;
+}

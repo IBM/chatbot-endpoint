@@ -25,6 +25,7 @@
     "moment": "^2.23.0",
     "moment-range": "^4.0.1",
     "request": "^2.88.0",
+    "statsd": "^0.8.0",
     "watson-developer-cloud": "^3.15.0"
   },
   "engines": {

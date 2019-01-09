@@ -1,0 +1,475 @@
+Started phase 0 (Application warmup), duration: 2s @ 11:07:00(-0800) 2019-01-09
+The session is: 0ae2289a-7b85-4fd2-b73c-9b83b114f568
+The session is: a045d202-de9a-4ac2-a46f-1cef14baf711
+The session is: 2a092df2-a008-4e49-95ae-02db51d0300e
+The session is: dd54f16a-fc6b-4c4a-9162-226e48273ac6
+The session is: cc95cd69-719c-4363-a024-d8897f1bf94d
+The session is: 78347851-df07-4094-8c96-910298afc480
+The session is: 37b104a0-c262-4cf3-b23b-76fe4fc19fa6
+The session is: 7b3d2d0a-d079-46a1-afa3-c675b1facbb2
+The session is: b46a295c-6ab4-4b9d-bd05-624293ead2ff
+The session is: d1ef7c23-8e1b-4c4e-9602-904e61c69ed8
+The session is: acad9ef9-b02a-4ad8-9275-6aa534a3b89a
+The session is: 47993281-41a7-4513-afcb-f2b74326c14c
+The session is: 2dc399c9-7a43-4597-b701-b8cf32281904
+The session is: 7dc3e372-5955-4220-a50f-c2f49cf42f95
+Started phase 1 (Application max load), duration: 2s @ 11:07:02(-0800) 2019-01-09
+The session is: d71de5d2-7745-4dc8-b1f1-f38903d4c6ca
+The session is: 1bfe6c5a-ed23-4baa-a741-275056aebebc
+The session is: 9fac475a-202b-405c-9028-d3a29ef6350c
+The session is: a2f7e061-91ad-41f9-a54b-4399541e7498
+The session is: 96c7445f-e639-445c-8497-7a680d5f2adf
+The session is: 39c0897c-5a97-45d8-96f0-c4ba85a07bd7
+The session is: 54284dc4-f0a6-419c-a5a6-7535784c3e36
+The session is: 47196257-c859-4d88-b1f6-32fd2c4f2474
+The session is: d50e7098-f1d1-40c4-9460-27aebc061e89
+The session is: ff379e5d-b220-421d-9c9b-e81f3a3da0d2
+The session is: 74bb6ac7-c760-4e6a-ba1f-08a631663a5e
+The session is: aa701a96-8c99-4a4a-8b29-344ae792a9b4
+The session is: 2cceec9b-3cc8-4192-a6cf-a5b014c3f2b6
+The session is: 65796eb1-52db-41c1-8dc9-5c8020487986
+The session is: d10007bb-aa93-4549-beab-afe83d47c783
+The session is: 94b5c02d-f2e6-42f0-8ddb-71bc6cacb1bb
+The session is: 78760148-b345-4d0e-b081-8867dbeccd15
+The session is: 4d84f286-7dea-42e7-bcec-21405c14cfb6
+The session is: 4439955c-5ff4-4f8c-979b-68f392ec6f7c
+The session is: 85dd7baf-9a71-4fe9-b143-6c9ecbab9a57
+The session is: 1dd3b519-c2df-4208-b247-cae4b58cb773
+The session is: 04246e7e-364a-4282-a7ee-f1333b41a996
+The session is: cf52a7b2-b10a-4d16-9b45-2313c625a88b
+The session is: 24b61163-7aca-4622-a3cb-0dbd0c0c701b
+The session is: d22d6c7a-7542-47ed-949e-352789388264
+The session is: be3600cf-76fb-4274-a79f-0abb1d933be4
+The session is: 84ab824a-3d65-4778-bb63-f5e4226382ef
+The session is: e0f2e043-ae95-4440-ac9e-b5c8e7d63943
+The session is: 8b44e272-3ddf-449e-8925-8526be48c5fe
+The session is: 69ae9f03-3dc5-4d05-b65f-1fc6de2ba7e9
+The session is: 09324bbb-1f6b-4699-8e06-a185f4117065
+The session is: a60f95f9-36f5-4181-a5a7-56dc0425879e
+The session is: 89bc9ee4-067d-4fbf-a631-cc11dfb0886b
+The session is: 6b7e1e30-ddc4-41a2-89f2-550e11c7aeac
+The session is: bc9dae34-cde9-4f54-9837-c6b68347e653
+The session is: 4672df9e-7cb0-404c-b335-55323c3818b5
+The session is: 50d30aea-8810-4877-b556-ff9702156b01
+The session is: 13aa61c4-7446-4da2-8b67-367dd54d2476
+The session is: b340d7da-72f3-40d1-a279-415b466f8000
+The session is: fa2a56ca-b8f8-4ea8-bb7d-fb671f59401a
+The session is: 7cc2c555-91b0-4d6a-916c-a7ec48b37947
+The session is: db2bfab8-ee12-4884-8d16-85fe8476c4aa
+The session is: dbe16164-66a8-4a7e-ab24-5dba46c5831b
+The session is: 4577bad3-9ba0-46bd-86c2-bcac65303045
+The session is: a75e1fb2-bb58-4110-80f2-9bc507d2651d
+The session is: cc677792-6ffc-4670-bfdd-855282ada384
+The session is: b4f85500-9f3b-4441-a836-9c9fd5421d88
+The session is: ae28a872-3930-4d7d-8358-02d1cfb023df
+The session is: 7ef40fd8-303c-4ec8-8633-8d7ab3490b32
+The session is: 21b3243a-efe5-4e3e-88ff-af4b7035dcf3
+The session is: 3b58603b-8555-4ce1-a200-d849447e8499
+The session is: 3e5b9f64-a865-4937-810a-580011707e1f
+The session is: 66e8cccd-e330-494e-a1d3-0abff7e14c66
+The session is: 56af1d09-3bfc-4a6f-b477-80d84f0c0ea0
+The session is: d4b0b771-4672-44a3-a8b8-b91922f5958e
+The session is: 96709adf-7bd5-4611-ab2e-fb22444ae0dd
+The session is: 06973d53-411d-46f7-93a1-982c511f56df
+The session is: f551a683-14f7-4038-9906-d92eaac9952d
+The session is: b49bcb4a-9441-403e-9b15-1901fdd24111
+The session is: 873ee713-daef-4715-a967-81974f0f1f2c
+The session is: 67ebc05e-7318-4ba0-816b-6cf21c8eaded
+The session is: 77c345a4-221e-40af-8717-46bfaf8c5320
+The session is: 33b55809-6b30-49dc-8ae1-87f93b1b1d5e
+The session is: d4663f39-3be3-4000-a09e-e60f535e4a64
+The session is: 0a9f890a-0d1b-4b11-8e3a-bfa70aa4785a
+The session is: 4ae16778-c656-4ee5-a4f6-5cbe3a14a9ba
+The session is: ce1146c0-d623-467a-ab0d-42a45e739db0
+The session is: a222a478-eeb4-40f0-96a5-a8187f6fe72a
+The session is: 6800eb16-bda5-4b4c-ad84-50404ec84f02
+The session is: 612941f8-3ab0-4f1f-83fc-46056594edf2
+The session is: eda43865-a9f4-416c-b80f-000a82a7a086
+The session is: 8ab73183-2b81-4b86-b8c0-bda8de0cbfdd
+The session is: 076ddf03-54cf-4be7-8475-38fa12515c92
+The session is: ada2ba46-1ecd-4c88-a75e-79eed0519574
+The session is: ba306713-10b1-477e-87d7-d0d5fcfbaa28
+The session is: 659a635d-182d-4f1e-8496-a7f2a353f4aa
+The session is: 332cce3a-8fbb-4734-b184-12b6bd69d500
+The session is: 74eaaf07-2697-40f2-9b1b-1f2e41fce531
+The session is: 153590bf-23ac-446c-8cde-2bb9d2de7890
+The session is: 3dd86deb-9aeb-494d-9df6-026d1dd2a136
+The session is: 45641b78-f92d-4f9c-a737-2892b08b11d1
+The session is: bd9aeae9-b0c2-4ee6-ae44-4c17ec0e4413
+The session is: 40b152ea-e3a2-4e83-8500-4b15decef153
+The session is: 277e48fe-e7ee-44cd-9e12-814134701f6c
+The session is: 6a1f1d9a-391b-4e02-a195-a65ccc2820f2
+The session is: c9b13e01-e8be-4989-85ba-42d85e555234
+The session is: c9ad8782-26a4-4740-9a8d-2dd0da86450b
+The session is: 0e7e65b3-8932-4cf0-9802-336d23706103
+The session is: 48c1db37-49a0-42f5-a1c2-efa8f382d03a
+The session is: b9188d88-180a-4104-9011-981723b5739c
+The session is: ccc84730-f9c5-463d-82a6-49c9ade17713
+The session is: f601dfc8-dffc-4bc5-885c-f606db23e1aa
+The session is: c8bf4967-8f6e-4f8a-87a7-4f9a369ff27f
+The session is: 5120bd38-5ec7-42a2-82a2-7d9556128dfc
+The session is: b16e88d5-7661-4d74-9227-63381b6f3b32
+The session is: 0b4e69e5-03eb-4dde-8b01-e7bcffa630c7
+The session is: 008de4f1-84c2-4513-861c-e2441acda5c9
+The session is: 4e3f9b87-4d86-4a18-ad29-05e47772ada7
+The session is: 4010fb77-3930-42e3-b085-b03f5c76c37f
+The session is: b4aa27d9-acd2-4958-b5e1-425f0177e932
+The session is: a2ac7d51-d14d-4857-94c7-2a3ba4e69d1e
+The session is: c5afcbef-0b7e-4597-8660-3da2deea6702
+The session is: a5a32315-4c8f-4bbf-a75d-c8bce2d42419
+The session is: 4b497662-fb91-4416-a509-f25ea4a0959a
+The session is: 3905cad1-a1b4-4ba6-a69d-818f8c59c2d9
+The session is: 95c187e8-a7a0-4332-b08d-c2e380551744
+The session is: 179777b5-7b9d-47ee-a91a-36013fa33101
+The session is: f11b0aa1-6127-41f0-8495-13b022802779
+The session is: 6fcdc300-69e2-4e28-87bf-cbb1d3b1babf
+The session is: 0eb81e9f-5483-4357-a3b8-d4ed5980eb8f
+The session is: 85bffb8b-622f-4fb3-abd9-b83a6230e0f5
+The session is: f6fc1130-ef68-4952-8485-e22d31ab44ca
+The session is: 4f916eba-ef2a-4118-bbf0-fd540ffed2ac
+The session is: 43f979f1-97ac-4c71-be6f-3690440eed08
+The session is: 44d2e8f2-cdd1-46d0-ac06-52673a1e8cba
+The session is: b1b319a4-3798-48e0-a54f-2c1f773f51fa
+The session is: e5c53046-eaf2-49fe-bf3d-056fe31cfaf3
+The session is: 21d16cd1-5ec4-441c-94c8-d91757a58838
+The session is: 72e82b72-768a-4535-bb91-e819c0ff39bb
+The session is: 358ebd0a-3627-42b3-a707-37db0664e1e2
+The session is: 8d7b2ed5-194c-4e9a-9b7c-9514d96cc6da
+The session is: f4fd4039-e4b8-408f-a034-8129d1f5edc3
+The session is: 2ee65ca4-d152-4ae1-b398-c2ca4a36652b
+The session is: 5b522506-daee-4d78-9ca3-93aaca502b33
+The session is: d710141f-76c9-494f-bbae-f7619e2fe372
+The session is: 06b66e36-1e41-4a3b-a8b7-bd85a8162a9f
+The session is: c2b23796-5543-443b-841e-67499a0ec114
+The session is: 095eb0e5-71ac-429c-bc08-5732cb194f49
+The session is: 4df12faa-dc3c-472f-aa0f-68cc0350ad74
+The session is: 4cec4225-80dc-431c-9b3c-b332b51dc6c5
+The session is: 6c7dc01f-f160-46a8-a6a0-55829c18ecf0
+The session is: c2aa6a5f-5eaa-4682-882e-79fed5be7942
+The session is: af2c7e41-1314-4830-b060-04e06bb3adb2
+The session is: 6ee94ef7-c3aa-43ec-96c9-44a7a87b7dbe
+The session is: e4fa7a2b-2336-4434-bd97-2241b480b20c
+The session is: 2be6b5c7-a2d0-46b8-af25-8d33780ae3c2
+The session is: 9b0fa477-f7b5-44a9-b3b9-63a25423b91b
+The session is: c1193d64-9fe4-43cf-9ebd-c827dc106826
+The session is: 60827ef8-134b-4595-869f-36f2c0d1a34e
+The session is: 29906411-242d-4c9a-8a8c-f95776b83c52
+The session is: 464c6f48-a545-401a-ad1d-a86f793b3293
+The session is: b4c29b50-5749-4d7a-9bbb-f83ec16ea0c6
+The session is: f5cfa147-f00e-4ea2-9118-2422a5e7265a
+The session is: 0e0f377d-68f0-474c-bf92-b40a0614fed8
+The session is: f630737d-1043-4626-8e08-2bfa3bf9cf45
+The session is: e02f37c6-7a6c-4bf0-96d4-c82d3e05d686
+The session is: e0fd67b7-9568-48b6-a12a-d44ae4fd274c
+The session is: e475af34-81bc-498e-880a-4056e45f8fe9
+The session is: a4effcec-cd49-4cb8-b193-5216f64e27f1
+The session is: a477e3f3-5869-4d21-a1fc-593216c3aa74
+The session is: f2a22e5e-49e0-4bd3-a822-6e038b4ffaf7
+The session is: 96496a13-e1a8-40b2-803c-fcf1f49f0b2e
+The session is: 4715ec9b-f121-4c6d-b1b0-97635de98aee
+The session is: c6667c7e-0528-40ad-8441-167b575c5438
+The session is: a5d8232c-e8d3-4df4-a82c-c08ebdf07c22
+The session is: 1fa4d9b0-9758-4ddf-867b-7a8fd21fd63f
+The session is: e36df80c-4489-42d5-8854-8c90ef3d4871
+The session is: dcd591c1-c97e-43da-ba08-b55a8cb3e242
+The session is: 46355b66-8e4e-4efa-b679-7119b25396b4
+The session is: 927f8917-0ec0-4737-9024-576718266a60
+The session is: d752bc36-2ffa-4f7c-bbbe-b3ba517b721b
+The session is: 891d84cd-87c5-48b6-8974-cfd4c82de24e
+The session is: b43db530-38a2-4aee-acc3-2d1bfcc063c9
+The session is: 591aab03-8b33-4c15-b198-0fe64e1aff6a
+The session is: 4e64a6f1-9ced-4c58-84d0-4617a78999a5
+The session is: e9101528-ad9d-44e6-ae6d-ae7af55c965b
+The session is: 8af808f5-9cc8-43fc-8481-690f037f0494
+The session is: 521753fe-fcc0-4107-b3ca-b0f4b3958137
+The session is: 005622c2-5185-4422-a5dd-e38975c81c64
+The session is: 07b6957c-29ff-4b4e-9ffd-b42817272cae
+The session is: a3a24070-e053-43ee-b1b4-3d8d84a10999
+The session is: 20ceaf9e-a7a2-4502-a5e7-9a285ff1a157
+The session is: 41a97f6a-9540-40f2-998b-eed75253cfd3
+The session is: 3db34787-616b-43b5-8a00-b51c3ffd40dd
+The session is: 63524415-5479-40f1-bcbe-ad790846dafe
+The session is: 6931aaa4-ce56-4b46-b4c3-5e54e41688c9
+The session is: 26cf8085-e76e-45f3-974f-aa30c890f17e
+The session is: 76fed5d8-8773-4c58-b9b3-0188e44ee80d
+The session is: b99de965-58ab-4b6e-8e65-23c7e536bf04
+The session is: 28fad6c4-28dd-4ed4-9744-5366f55a2027
+The session is: 8f5ef2cc-f56f-4a5a-91db-b11c3f3b0b0d
+The session is: 1fb1a1da-523f-491e-87aa-7ce63f359814
+The session is: ed2898cb-9336-4d34-894b-b0c33b5b9dba
+The session is: e8861f7d-c8fa-44f0-9994-9def957fdef4
+The session is: 0049a25a-0cb5-4414-b065-c90362f94341
+The session is: 2dea9688-8a26-43cd-83dc-346e1153d3d1
+The session is: 9b061c6c-aad6-4b1c-b374-b8e20169decc
+The session is: 1c849d01-3248-41fd-88a1-b5429dd771db
+The session is: 892753c2-c97a-470d-b181-12f2c37dd4df
+The session is: 6f73de3b-ff3b-4d16-8cfb-579c8536b798
+The session is: 5a2e27cc-04f8-446d-8959-5f0e65b74fab
+The session is: 8873cc29-0cd3-4784-b15f-bc5f50608bf8
+The session is: 96ffbbcc-08cf-488f-b88f-95ff4d9c6d15
+The session is: 16721809-57ee-473f-9dfa-a9bea8e414df
+The session is: 501b5527-9530-4432-a5ef-c2c1717c704f
+The session is: 75fd03e3-c6fd-41a4-8919-11b9d896e60f
+The session is: c344a4a8-2ed1-45bf-86af-d0e61898b4dd
+The session is: cae71a1a-ad82-4e1f-a285-fed84cce4986
+The session is: 1536ac7d-ed21-4a47-a5d2-64b847c4dbcb
+The session is: 66ab6584-9e8b-428b-a49d-c42be13d4912
+The session is: 545318db-24e8-4437-998d-0d0e3370c087
+The session is: ad13fcb3-4561-4f49-bf0e-1820dc611bc8
+The session is: c724210d-bece-4c3d-aa8d-b0e758b9d364
+The session is: 4d9976f5-17e2-4945-86c9-191f0caa28aa
+The session is: bc143ec7-3647-4509-ad6c-30ddf16cbfb7
+The session is: b9b9d0e8-79ad-4ebe-a000-908583b68808
+The session is: e9bd3eb6-2948-4a37-a8c9-9a35a7c3022a
+The session is: 381a2f21-b2ed-40e3-b693-e407113db826
+The session is: 9ea365be-b483-42fa-be1b-78d08d963eec
+The session is: f22ab545-c622-4f51-a8f1-8df7c5253d38
+The session is: 16680661-62ee-4227-8ea3-7a8038183cf5
+The session is: a8643550-02c8-4a47-bfb1-e2b19475307b
+The session is: b0f2202c-e25c-455f-9b48-260fbcd935e5
+The session is: 5971f661-1791-470c-a0b6-dc68e03becfb
+The session is: 68edde05-e31f-4d7b-b250-2f915042f301
+The session is: 6c82f455-2798-4aa6-9e5f-8b1f443ad78c
+The session is: 6aeb2b50-41c8-4f52-9257-a80a9a228452
+The session is: 6577b628-1796-49d2-873c-3a08dac356e9
+The session is: 2d5cfa52-5792-4837-99b5-5ef75f41ca06
+The session is: 5f84132d-5205-4b3c-b7fd-fc1356bacc02
+The session is: 3ae86bee-2205-4a71-b8a9-8a0d96a7cd73
+The session is: b7e15704-0afe-4e8c-b0ab-86d4ab2c5e88
+The session is: c0f30714-07fa-47f0-9422-d24794fb7d98
+The session is: 9bd25f4c-a86d-4a5f-adc4-cdf11d4e7e16
+The session is: 6f68e945-5397-46f3-8a13-b5ec700ea793
+The session is: 396df84e-36a2-4aa8-b1c5-becfb75c0160
+The session is: 2fc364a8-504b-4ad9-9841-e7d25aaafcb8
+The session is: bdda5d13-10db-4ec9-9546-015d2b26fd1f
+The session is: 3d67ce05-b5b4-4e30-930c-f929a967e93f
+The session is: 9d65c900-f16a-4e1a-be1a-9784eb4dc745
+The session is: 15fcf09f-36c1-4918-a96a-491601b7df40
+The session is: c286f77e-c949-46f6-bf87-4a2f3d44ea95
+The session is: 0e0b564b-382a-42bb-82da-338e3b49ae5d
+The session is: 8a93c182-e97d-4c28-b04c-ddf8f63b3104
+The session is: cb6cc014-e069-4fbe-8ccf-d5bc5234b468
+The session is: c9a89638-b638-4b75-bab2-62f84f7bf59f
+The session is: e3a80592-adbf-49da-8fe6-5747e12ad630
+The session is: 93b3b220-842c-4fc3-bc0f-76e9e3a58b33
+The session is: e35e0128-4e95-4ebf-b798-ae2202b5cc40
+The session is: 18481c5d-0e1e-45aa-8949-a027f026aa0d
+The session is: 1ca7b7fa-34cc-4102-ad04-c8af82df1733
+The session is: aa67ccce-b5bc-4e34-bc5a-14ea34336508
+The session is: a5e6fb96-a304-40dd-a7f8-e8a827f1de53
+The session is: e1c4ef77-87cc-4408-aa25-781b97e06577
+The session is: 7befbaea-a9ee-42ee-9b88-bfb9af9d3e08
+The session is: d1772021-fe7c-4a2a-95ce-abf661f8c556
+The session is: c55bd7ae-eb51-4b95-aa83-ccaf3a35c843
+The session is: bab60550-5371-49a1-a48b-805d9562ef8c
+The session is: 474dd8eb-c92a-4a78-a85f-b9fd7de33a78
+The session is: d1fae4f3-5918-4f69-a36a-4f0dfa5bbb7d
+The session is: 85db030a-3253-47bb-b4e3-28fcfbcbeec6
+The session is: c18b1399-2e3e-48c6-a952-0f9f6c4e1ca1
+The session is: 3f0606f6-9ec9-4927-aa54-4a47e103d00d
+The session is: 3605de86-3834-45d2-98ad-dcbc52e71287
+The session is: 1bca2357-ef48-4569-9a83-ae050dd54c42
+The session is: 421bff6b-43e9-4f86-9c4a-a49196119606
+The session is: b8b7b1d8-5cc1-4010-a9d4-e4325846255c
+The session is: 7f0b49f5-c205-47fa-8f31-b1620f2560a9
+The session is: 7900479d-2615-4f88-9be0-183490cc03bf
+The session is: 3c044ece-3cc4-4676-94c5-4772b13e7e3e
+The session is: 23ec3a3f-35bc-44e0-b36f-c51eefa197cd
+The session is: a6602ffd-43aa-44d4-bc0f-ccb882f9fa7d
+The session is: 990ae0e5-322b-45d4-9a38-2bb0e7eea800
+The session is: d0cde80c-a269-412e-8779-5ce6f84091bb
+The session is: 4a7a0657-266e-4bbf-a416-5d6fd316272f
+The session is: 3f1b19ae-6edf-40ec-91e8-652355a33c76
+The session is: e76d2772-29fb-4dc5-9d8c-963b643c1767
+The session is: e7a6aaf6-36e5-4445-a862-570069fa46d8
+The session is: f7e3374e-10d6-45ad-82d0-820d8b023d9d
+The session is: 771896cd-ee15-4660-8e14-e29a6dbb6873
+The session is: 99cba44d-9c7a-4cb7-8e1b-9add8767c277
+The session is: d51c1d7a-efdf-46ba-bb6f-d755e1dbfadb
+The session is: 3ddb8cdc-a8cb-4b0d-a205-5caba4ba0eda
+The session is: 3f5e1e6f-7e12-4570-ac30-96e07a3f0bc4
+The session is: ff63c116-9889-4e17-8ce7-f8e14d1f6781
+The session is: ded7c151-3d1d-4564-949f-ec5d9e167a22
+The session is: 36854237-74e6-43d9-8fcb-7e5b5f2e9857
+The session is: be415694-37ef-460b-8b7f-3e2e181f2112
+The session is: d9429c92-a2e5-4d50-bd67-f54a7d8826f6
+The session is: 0e70036e-14e9-4c7c-af54-c29f7dc21364
+Report @ 11:07:10(-0800) 2019-01-09
+  Scenarios launched:  296
+  Scenarios completed: 0
+  Requests completed:  294
+  RPS sent: 59.36
+  Request latency:
+    min: 337.1
+    max: 3125.1
+    median: 1751.9
+    p95: 2146.8
+    p99: 2639.2
+  Codes:
+    200: 294
+
+Report @ 11:07:20(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:07:30(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:07:40(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:07:50(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:00(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:10(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:20(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:30(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:40(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:08:50(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:09:00(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:09:06(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+  Errors:
+    ESOCKETTIMEDOUT: 296
+
+All virtual users finished
+Summary report @ 11:09:06(-0800) 2019-01-09
+  Scenarios launched:  296
+  Scenarios completed: 0
+  Requests completed:  294
+  RPS sent: 4.69
+  Request latency:
+    min: 337.1
+    max: 3125.1
+    median: 1751.9
+    p95: 2146.8
+    p99: 2639.2
+  Scenario counts:
+    get session and send message: 296 (100%)
+  Codes:
+    200: 294
+  Errors:
+    ESOCKETTIMEDOUT: 296
+

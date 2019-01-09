@@ -1,0 +1,24 @@
+config:
+  plugin:
+    statsd:
+      host: "localhost"
+      port: 8125
+      prefix: "artillery"
+  target: http://169.55.81.195:31726/codey/v1
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      rampTo: 1
+      name: "Search warmup"
+    - duration: 1
+      arrivalRate: 1
+      name: "Search max load"
+scenarios:
+  - name: "query on elastic-search"
+    flow:
+      - get:
+          url: "/search?entities=AI%3A0.5%2Catificial%20intelligence%3A0.5&size=2&from=0"
+          capture:
+            json: "$.response"
+            as: "response"
+      - log: "Response received: {{ response }}"

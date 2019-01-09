@@ -1,0 +1,37 @@
+config:
+  plugin:
+    statsd:
+      host: "localhost"
+      port: 8125
+      prefix: "artillery"
+  #  target: https://advocacy.mybluemix.net
+  target: http://169.55.81.195:30119
+  phases:
+    - duration: 2
+      arrivalRate: 15
+      rampTo: 20
+      name: "Application warmup"
+    - duration: 2
+      arrivalRate: 20
+      name: "Application max load"
+scenarios:
+  - name: "get session and send message"
+    flow:
+      - get:
+          url: "/session"
+          capture:
+            json: "$.session"
+            as: "session"
+      - log: "The session is: {{ session }}"
+      - post:
+          url: "/message"
+          json:
+            session: "{{ session }}"
+            input: "kubernetes"
+      - think: 5
+      - post:
+          url: "/message"
+          json:
+            session: "{{ session }}"
+            input: "istio"
+      

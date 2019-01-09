@@ -1,0 +1,260 @@
+Started phase 0 (Application warmup), duration: 2s @ 11:11:26(-0800) 2019-01-09
+The session is: eb916e7c-7943-4669-a278-731f02591fba
+The session is: 7ab4e510-4b17-4a29-8adb-fe6779f1d3f8
+The session is: 994a3b31-5a36-40ea-a559-2235c3c8d61d
+The session is: aa7f0973-1077-4bce-abd3-0754481f623c
+The session is: 97b8fbc3-92a4-4791-a6dd-4e03fbdca4fd
+The session is: bde33716-d39f-4a65-a4ab-e87228541e19
+The session is: 491a657e-f9eb-4e2d-a3c8-9b82035ecdec
+The session is: 8306e46a-4ae9-4201-8a66-570a7f808d88
+The session is: 9da1066a-4cfe-4006-b16f-b874d36cf81f
+The session is: 2e1f2ade-99ae-40bb-a590-ffda4ea80bc4
+The session is: 72d5b145-45eb-4a99-ab48-d52b5c735cf0
+The session is: 3d0a245c-bc24-4512-93d7-d32534c3b593
+The session is: 647507f6-5478-41bb-a0e3-0e3dfce2b87f
+The session is: f8ef4f38-b628-4337-a818-735a2191ce04
+The session is: 1d806bf5-b345-4008-aad6-a6fc81e326cb
+The session is: 63525e45-e1f6-49fe-9ac5-6ffb529744e1
+The session is: 4a498489-f055-4825-894a-7743f8617c2d
+The session is: 2eda299d-8c75-41ab-a23a-939891842618
+The session is: efd68d69-a8d3-4001-b20b-6cbe5405f2c8
+The session is: 3ba2ece7-a5a1-4f1f-8b77-17df2dce5453
+The session is: 22893aa4-6b71-4400-9949-5b3d16436ec9
+The session is: 0af19299-ea9a-42f4-b411-c5b7daa2fdf2
+The session is: e00ea0c0-d11a-4185-90d2-7bfbaf651d5d
+The session is: 869ec980-48da-4194-b30d-311ebbeb6b70
+The session is: bc1bd35e-e126-43e6-b592-6c17c39561e1
+The session is: b3dc319c-52df-406e-ac74-39a21b69ff4f
+The session is: 2e2d6147-6617-4cd5-8538-8b7327e6e954
+The session is: 39267075-7949-46c7-93e4-329a92d215d1
+The session is: 4bf78475-a4ec-4f0e-8286-2402f0b136bd
+The session is: 1786f868-6d76-4463-9ad0-b12a925eaae0
+The session is: 93e3f376-16f1-4277-8887-a8f53f3a48da
+Started phase 1 (Application max load), duration: 2s @ 11:11:28(-0800) 2019-01-09
+The session is: 66a38739-431b-4473-bd40-691a6673603f
+The session is: e8a9c1b1-a597-4ad4-9f83-a86da026fadf
+The session is: d3896eaa-5469-4a96-a7ac-ad66b23db1bf
+The session is: 1d481b50-cac1-416c-813b-53c7638c1d93
+The session is: f572909a-f4d8-4a8a-9ece-fd68847492d2
+The session is: 30c4ebbb-fc1d-4556-aaeb-af9f09c133e8
+The session is: 4dcd3f14-2ef0-4159-8a43-bb7935ed52a4
+The session is: 4d749e9c-16d7-4051-ab8a-153e54eb82c2
+The session is: a32cae2b-1347-413f-838a-5840e6e6f0cf
+The session is: de031e1d-89f3-4f92-97d9-1f32badd08ea
+The session is: 14093e0a-d6f5-42c8-a468-914c254625dd
+The session is: 706d256c-0130-4dc8-90ee-7d500191cd54
+The session is: d01592f6-af8d-4582-8d28-6fba4d59f654
+The session is: 6f7c0e1c-4f98-4a1b-93b7-d20fc9f1caf1
+The session is: db27f5c7-244a-4c1e-9695-a0f2e3825c22
+The session is: 3365be07-8923-47a7-a63c-8c746c1a8862
+The session is: c6f01d90-7af9-47fd-835e-a03ff87ab8e7
+The session is: a72fbcd7-567b-4385-9457-adc5ca41debc
+The session is: 80c29871-6fa1-487b-96c9-411b06ba670c
+The session is: 866a8532-ec7e-4695-861c-fc7617835a26
+The session is: a7700e2a-2e52-4989-a860-d5deb92355e3
+The session is: 47e74692-63a3-4f17-be28-cabce5a2e588
+The session is: 6f381331-0ee6-463b-ac6e-6e5bc1352088
+The session is: df03a582-0f1b-4abe-95b6-92b94157b1da
+The session is: 3b5c2357-9128-43bf-9ff8-6792098c72a1
+The session is: bc8ca360-7c8e-471b-9bf9-45561466487a
+The session is: 0d5eeac6-8305-4aa5-8ff8-bb338a83f19e
+The session is: c965af23-ffee-48e2-9bcd-f72a53f3df12
+The session is: d2e25afe-44d0-4803-a422-1b4a2ba817f4
+The session is: 2d0b26a0-e247-45b6-ab95-fb09c41b6263
+The session is: 9aa30b08-c457-44b8-b06b-bb01b7a88514
+The session is: 5a5d781d-a254-4fec-a6ea-e3c9d68b0f1a
+The session is: d7b015ee-cb7e-419e-ac24-b62429621a7b
+The session is: d933b3de-00f5-48d3-8eaa-e2a6b55d1d50
+The session is: bb9cb08e-6339-4ba4-ac6d-b7cad532372e
+The session is: 82c5dac1-0b0a-427a-b8c5-76dba65c2a2c
+The session is: 4d76b96e-89ae-4e3c-8c96-d056bdf251ac
+The session is: 82752991-a110-44e8-9dfd-935bd5e52b0c
+The session is: b4ca765e-efdf-4379-9c19-792742a546ad
+The session is: 4a79c4a2-aab5-4631-b7f9-0965632bf317
+The session is: 299ea7be-0a9e-42e2-90df-d7351f25d7ff
+The session is: 247fc74a-09e9-45a6-8f91-b2d40c799459
+The session is: f1adf34e-0110-4ec1-9852-71b434a361e5
+The session is: 408ffe7a-0bbb-42fb-996b-38aa0c125212
+The session is: 85584dd1-466e-4e71-b5a9-17da7a9414ad
+The session is: 35c31e25-dcbc-4c48-88ec-b9bf8ba36154
+The session is: fcbc0620-25df-4919-b322-7fbdfd5295bf
+The session is: b9cea9a5-8fdf-46d2-9001-ed71fb606536
+Report @ 11:11:36(-0800) 2019-01-09
+  Scenarios launched:  79
+  Scenarios completed: 0
+  Requests completed:  79
+  RPS sent: 15.94
+  Request latency:
+    min: 315.8
+    max: 863
+    median: 367.9
+    p95: 686.1
+    p99: 846.1
+  Codes:
+    200: 79
+
+Report @ 11:11:46(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:11:56(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:06(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:16(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:26(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:36(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:46(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:12:56(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:13:06(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:13:16(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:13:26(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+
+Report @ 11:13:31(-0800) 2019-01-09
+  Scenarios launched:  0
+  Scenarios completed: 0
+  Requests completed:  0
+  RPS sent: NaN
+  Request latency:
+    min: NaN
+    max: NaN
+    median: NaN
+    p95: NaN
+    p99: NaN
+  Errors:
+    ESOCKETTIMEDOUT: 79
+
+All virtual users finished
+Summary report @ 11:13:31(-0800) 2019-01-09
+  Scenarios launched:  79
+  Scenarios completed: 0
+  Requests completed:  79
+  RPS sent: 1.27
+  Request latency:
+    min: 315.8
+    max: 863
+    median: 367.9
+    p95: 686.1
+    p99: 846.1
+  Scenario counts:
+    get session and send message: 79 (100%)
+  Codes:
+    200: 79
+  Errors:
+    ESOCKETTIMEDOUT: 79
+
